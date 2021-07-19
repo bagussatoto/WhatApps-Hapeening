@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="col-md-12">
+    <div id="navigation">
+      <%= link_to root_path do %>
+        <%= image_tag "logo.svg", id: "logo" %>
+      <% end %>
+
+      <ul>
+        <li>About</li>
+        <li><%= link_to "Events", events_path %></li>
+      </ul>
+    </div>
+
+    <% if current_page? root_path %>
+      <h2>Sign up for weekly texts about local family friendly events</h2>
+
+      <%= form_for(@user, url: {action: "create"}) do |f| %>
+      <div class="input-group input-group-lg">
+        <%= f.text_field(:email, class: "form-control input-sm",
+        placeholder: "user@email.com" ) %>
+        <span class="input-group-btn" style="width:0px;"></span>
+
+        <%= f.text_field(:phone_no, class: "form-control input-sm",
+        style: "border-left: none", placeholder: "6141234567") %>
+
+        <span class="input-group-btn">
+          <%= f.submit "Subscribe", class: "btn btn-default",
+          style: "border-left: none" %>
+        </span>
+      </div>
+      <% end %>
+    <% end %>
+
+  </div>
+</div>
+

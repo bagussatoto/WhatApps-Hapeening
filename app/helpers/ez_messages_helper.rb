@@ -1,0 +1,2 @@
+module EzMessagesHelper
+end

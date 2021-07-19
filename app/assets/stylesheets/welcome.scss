@@ -1,0 +1,204 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$turquoise: #1abc9c;
+$cobalt: #34495e;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+
+.turquoise {
+  background: $turquoise;
+  color: white;
+}
+
+::selection {
+  background-color: #aee1d4;
+  color: #fff;
+}
+
+.site {
+  @include display-flex;
+  @include flex-direction(column);
+  min-height: 100vh;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: aleobold;
+}
+
+a {
+  color: white;
+
+  &:hover {
+    color: darken($turquoise, 5%);
+  }
+}
+
+.success-image, .error-image {
+  max-width: 300px;
+}
+
+#navigation {
+  @include display-flex;
+  @include flex-wrap(nowrap);
+  @include justify-content(space-between);
+  @include align-items(center);
+  margin-top: 3em;
+
+  ul {
+    list-style: none;
+
+    li {
+      display: inline-block;
+      text-transform: uppercase;
+    }
+
+    li + li {
+      margin-left: 1em;
+    }
+  }
+}
+
+#header {
+  background-image: -webkit-gradient(
+    linear,
+    right bottom,
+    right top,
+    color-stop(0, #1BDBB5),
+    color-stop(1, $turquoise)
+  );
+  background-image: -o-linear-gradient(top, #1BDBB5 0%, #1ABC9C 100%);
+  background-image: -moz-linear-gradient(top, #1BDBB5 0%, #1ABC9C 100%);
+  background-image: -webkit-linear-gradient(top, #1BDBB5 0%, #1ABC9C 100%);
+  background-image: -ms-linear-gradient(top, #1BDBB5 0%, #1ABC9C 100%);
+  background-image: linear-gradient(to top, #1BDBB5 0%, #1ABC9C 100%);
+
+  padding-bottom: 3em;
+
+  #logo {
+    width: 100px;
+  }
+
+  h2 {
+    color: white;
+    margin: 2em 0 1em;
+  }
+
+  input, button {
+    border: none;
+  }
+
+  button, .btn {
+    background: darken($turquoise, 5%);
+    color: white;
+
+    &:hover {
+      background: darken($turquoise, 10%);
+    }
+  }
+}
+
+#content {
+  flex: 1;
+
+  .color-bg {
+    padding: 5% 0;
+  }
+
+  .iphone-container {
+    @include order(-1);
+    @include align-self(flex-end);
+    overflow: hidden;
+    max-height: 400px;
+
+    .iphone {
+      margin: 2em 0 0;
+      width: 100%;
+      max-width: 400px;
+      margin: 0px auto;
+      display: block;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 1.8em;
+    color: #FFF;
+
+    &:first-child {
+      margin-top: 2em;
+    }
+  }
+
+  h3 {
+    color: #FFF;
+    font-size: 36px;
+  }
+
+  .family {
+    max-width: 400px;
+    display: block;
+    margin: 0px auto;
+  }
+
+  .knowledge {
+    max-width: 200px;
+    display: block;
+    margin: 0px auto;
+  }
+}
+
+#footer {
+  background-color: $turquoise;
+  color: white;
+  padding: 2em 0;
+
+  .footer-logo {
+    height: 1em;
+    margin-bottom: 2px;
+  }
+}
+
+.center-flex {
+  @include display-flex;
+  @include align-items(center);
+  height: 100vh;
+}
+
+.flex-vertical-align {
+  img { width: 100%; }
+}
+
+thead {
+  background: white;
+  font-family: aleobold;
+  color: $turquoise;
+}
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+  h2 {
+    font-size: 30px;
+  }
+
+  .flex-vertical-align {
+    @include display-flex;
+    @include align-items(center);
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+}
+
+/* [> Large devices (large desktops, 1200px and up) <] */
+/* @media (min-width: @screen-lg-min) { ... } */

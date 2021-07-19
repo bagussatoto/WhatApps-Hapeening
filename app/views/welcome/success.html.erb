@@ -1,0 +1,12 @@
+<div class="container center-flex">
+  <div class="col-md-12 text-center" style="margin: 0 auto;">
+    <%= link_to root_path do %>
+      <%= image_tag "logo.svg", id: "logo", class: "success-image" %>
+    <% end %>
+    <% if flash[:notice] %>
+      <h2><%= flash[:notice] %></h2>
+    <% else %>
+      <h2>Thank you for subscribing!</h2>
+    <% end %>
+  </div>
+</div>

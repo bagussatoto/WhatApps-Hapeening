@@ -1,0 +1,22 @@
+@import "compass";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "fonts";
+@import "font-awesome";
+@import "welcome";
+@import "errors";
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	font-family: 'andika_basicregular';
+	position: relative;
+}
+
+// fix for tables in Firefox
+@-moz-document url-prefix() {
+  fieldset { display: table-cell; }
+}
